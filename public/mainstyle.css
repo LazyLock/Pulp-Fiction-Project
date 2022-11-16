@@ -1,0 +1,18 @@
+img {
+    max-width : 10%;
+    height: auto;
+    margin : auto;
+    display: block;
+    padding: 10px;
+    padding-bottom: 30px;
+}
+#copyright {
+    text-align: center;
+}
+.login_body {
+    text-align: center;
+}
+.register_body {
+    text-align: center;
+    padding : 10px;
+}

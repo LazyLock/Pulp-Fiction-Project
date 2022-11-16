@@ -2,10 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Main Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale = 1.0, user-scalable=no">
+    <title>Pulp_Fiction</title>
+    <link rel="stylesheet" href="mainstyle.css">
 </head>
 <body>
-    <h1>PULP FICTION Project</h1>
-    <h2>by @groovydhh @__imsta</h2>
+    <header>
+        <h1 style = "text-align: center;">Pulp_Fiction Main Page</h1>
+        <nav>
+            <main>
+                <span>
+                    <img src = "img/mainlogo.png">
+                </span>
+                <div class = "login_body">
+                    <span>
+                        <label for="loginbutton">아이디</label>
+                        <input type="text" id = "login_id">
+                    </span>
+                    <span>
+                        <label for="login_password">비밀번호</label>
+                        <input type="password" id = "login_password">
+                    </span>
+                    <span>
+                        <input type="button" value = "로그인" id = "loginbutton">
+                    </span>
+                </div>
+                <div class = "register_body">
+                    <span> 
+                        <input type="button" value = "회원가입" id="register_button" onclick = "location.href = 'register.html'">
+                    </span>
+                </div>
+            </main>
+        </nav>
+    </header>
+    <footer>
+        <h3 id = "copyright">@copyright groovystar</h3>
+    </footer>
 </body>
 </html>

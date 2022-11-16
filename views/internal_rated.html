@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개인페이지입니다</title>
+    <style>
+        img {
+            max-width : 10%;
+            height: auto;
+            margin : auto;
+            display: block;
+            padding: 10px;
+            padding-bottom: 30px;
+        }
+        .evaluation {
+            text-align: center;
+            border : solid 1px;
+            padding : 10px;
+        }
+        #org_eval, #new_eval {
+            padding : 10px;
+            margin : 3px;
+        }
+        main {
+            border : solid 1px;
+        }
+        #eval_list {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src = "img/mainlogo.png">
+    </header>
+    <nav>
+        <main>
+            <div class= "evaluation">
+                <button id = "org_eval" onclick = "changeRated()"> 기존 평가 보기</button>
+                <button id  = "new_eval" onclick = "changeNewRated()"> 새 평가 보기</button>
+            </div>
+            <div class = "eval-list">
+                <ol>
+                    <li>평가평가평가평가</li>
+                    <li>평가평가평가</li>
+                    <li>이거 자바스크립트 for문 돌려서 list마다 id 넣은 다음에 css 선택자로 조정해야할듯</li>
+                </ol>
+            </div>
+        </main>
+    </nav>
+    <footer style = "text-align: center;">
+        문구문구문구
+    </footer>
+    <script>
+        function changeRated() {
+            let evalList = document.getElementsByClassName("eval-list");
+            for (let i = 0; i < evalList.length; i++)
+            evalList[i].innerText = "기존에 있는 평가로 내용 변경"
+        }
+        function changeNewRated() {
+            let evalList = document.getElementsByClassName("eval-list");
+            for (let i = 0; i < evalList.length; i++)
+            evalList[i].innerText = "새로운 평가로 내용 변경"
+        }
+    </script>
+</body>
+</html>
