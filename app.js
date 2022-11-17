@@ -4,6 +4,7 @@ const path = require("path");
 const dotenv = require("dotenv");
 
 const mainRouter = require("./routes")
+const externalRouter = require("./routes/external_test")
 
 dotenv.config();
 
@@ -18,6 +19,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use('/', mainRouter)
+app.use('/test', externalRouter)
 
 app.use((req, res, next) => {
   const error = new Error(`${req.method} ${req.url} 라우터가 없습니다.`);
