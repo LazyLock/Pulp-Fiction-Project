@@ -1,0 +1,28 @@
+img {
+    max-width: 10%;
+    height: auto;
+    margin: auto;
+    display: block;
+    padding: 10px;
+    padding-bottom: 30px;
+}
+
+.evaluation {
+    text-align: center;
+    border: solid 1px;
+    padding: 10px;
+}
+
+#org_eval,
+#new_eval {
+    padding: 10px;
+    margin: 3px;
+}
+
+main {
+    border: solid 1px;
+}
+
+#eval_list {
+    text-align: center;
+}

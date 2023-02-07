@@ -3,37 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        header {
-            text-align: center;
-        }
-        img {
-        max-width : 10%;
-        height: auto;
-        margin : auto;
-        display: block;
-        padding: 10px;
-        padding-bottom: 30px;
-        }
-        .send-rate-class {
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="/external_rating.css">
+    <title>외부 사람이 평가하는 페이지</title>
 </head>
 <body>
     <header>
         <h3>Welcome to Pulp Fiction!</h3>
-        <img src="img/mainlogo.png" alt="">
+        <img src="/mainlogo.png">
     </header>
     <main>
         <h3 style = "text-align: center;">업로드한 사진 넣을 공간</h3>
     </main>
     <footer>
-        <div class = "send-rate-class">
-            <input type="text" name="" placeholder="욕설 사용은 자제해주세요" id="send-rate">
-            <input type="button" value =">" onclick="confirm('평가를 전송하시겠습니까?')">
-        </div>
+        <form action="/test/rating/comment" method="post">
+            <div class = "send-rate-class">
+                <input type="text" name="" placeholder="욕설 사용은 자제해주세요" id="send-rate">
+                <!-- <type="button" value =">" onclick="confirm('평가를 전송하시겠습니까?')"> -->
+                <button type="submit">전송</button>
+            </div>
+        </form>
     </footer>
 </body>
 </html>

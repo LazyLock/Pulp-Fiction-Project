@@ -4,6 +4,8 @@ const path = require("path");
 const dotenv = require("dotenv");
 const { sequelize } = require("./models");
 
+
+const externalRouter = require("./routes/external_test")
 const mainRouter = require("./routes");
 const authRouter = require("./routes/auth");
 
@@ -29,6 +31,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use('/', mainRouter)
+app.use('/test', externalRouter)
 app.use('/auth', authRouter)
 
 app.use((req, res, next) => {
