@@ -1,42 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale = 1.0, user-scalable=no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale = 1.0, user-scalable=no"
+    />
     <title>Pulp_Fiction</title>
-    <link rel="stylesheet" href="mainstyle.css">
-</head>
-<body>
+    <link rel="stylesheet" href="mainstyle.css" />
+  </head>
+  <body>
     <header>
-        <h1 style = "text-align: center;">Pulp_Fiction Main Page</h1>
-        <nav>
-            <main>
-                <span>
-                    <img src = "img/mainlogo.png">
-                </span>
-                <div class = "login_body">
-                    <span>
-                        <label for="loginbutton">아이디</label>
-                        <input type="text" id = "login_id">
-                    </span>
-                    <span>
-                        <label for="login_password">비밀번호</label>
-                        <input type="password" id = "login_password">
-                    </span>
-                    <span>
-                        <input type="button" value = "로그인" id = "loginbutton">
-                    </span>
-                </div>
-                <div class = "register_body">
-                    <span> 
-                        <input type="button" value = "회원가입" id="register_button" onclick = "location.href = 'register.html'">
-                    </span>
-                </div>
-            </main>
-        </nav>
+      <h1 style="text-align: center">Pulp_Fiction Main Page</h1>
+      <nav>
+        <main>
+          <span>
+            <img src="img/mainlogo.png" />
+          </span>
+          <form action="/auth/login" method="post" class="LoginContent">
+            <div>
+              <span>아이디</span>
+              <input type="text" id="LoginId" name="id"/>
+            </div>
+            <div>
+              <span>비밀번호</span>
+              <input type="text" id="LoginPw" name="password"/>
+            </div>
+            <button type="submit">로그인</button>
+          </form>
+          <div class="register_body">
+            <span>
+              <a href="/register">회원가입</a>
+            </span>
+          </div>
+        </main>
+      </nav>
     </header>
     <footer>
-        <h3 id = "copyright">@copyright groovystar</h3>
+      <h3 id="copyright">@copyright groovystar</h3>
     </footer>
-</body>
+  </body>
 </html>

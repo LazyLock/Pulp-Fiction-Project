@@ -1,69 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register</title>
     <style>
-        header { 
-            text-align: center;
-        }
-        .register_body {
-            text-align: center;
-        }
-        .reg_id, .reg_pw, .reg_pw_check, .reg_em_check, .reg_instaid {
-            margin : 30px;
-        } 
-        #paragraph, #copyright {
-            text-align: center;
-        }
+      header {
+        text-align: center;
+      }
+      .register_body {
+        text-align: center;
+      }
+      .reg_id,
+      .reg_pw,
+      .reg_pw_check,
+      .reg_em_check,
+      .reg_instaid {
+        margin: 30px;
+      }
+      #paragraph,
+      #copyright {
+        text-align: center;
+      }
     </style>
-</head>
-<body>
-    <header>
-        회원가입
-    </header>
-    <main>
-        <div class = "register_body">
-            <div class = "reg_id">
-                <label for="register_id">아이디를 입력하세요</label>
-                <input type="text" id = "register_id">
-            </div>
-            <div class = "reg_pw">
-                <label for="register_password">비밀번호를 입력하세요</label>
-                <input type="password" id = "register_password">
-            </div>
-            <div class = "reg_pw_check">
-                <label for="password_check">비밀번호 확인</label>
-                <input type="password" id = "password_check">
-            </div>
-            <div class = "reg_em_check">
-                <label for="register_email">이메일을 입력하세요</label>
-                <input type="text" id = "register_email">
-                <input type="button" value = "인증번호 전송" name="" id="check_email">
-            </div>
-            <div class = reg_instaid>
-                <label for="instaid">인스타그램 아이디를 입력해주세요</label>
-                <input type="text" id = "password_check">
-                <div class = 'check_open'>
-                    <label for="check1"> 공개 </label>
-                    <input type="checkbox" id = check1>
-                    <label for="check2"> 비공개 </label>
-                    <input type="checkbox" id = check1>
-                </div>
-                <div>
-                    <label for="instafeed">비공개인 경우 피드를 사진을 업로드해주세요</label>
-                    <input type="file" name="" id="instafeedupload">
-                </div>
-            </div>
-            <div>
-                <input type="button" value="회원가입 완료" id="" onclick="alert('회원가입이 완료되었습니다')">
-            </div>
+  </head>
+  <body>
+    <div class="RegisterHeader">회원가입</ㄲeader>
+      <form action="/auth/register" method="POST" class="RegisterContent">
+        <div class="Id">
+          <span>아이디</span>
+          <input type="text" name="id"/>
         </div>
-    </main>
+        <div class="Nickname">
+          <span>닉네임</span>
+          <input type="text" name="nickname"/>
+        </div>
+        <div class="Pw">
+          <span>비밀번호</span>
+          <input type="text" name="password"/>
+        </div>
+        <div class="PwCheck">
+          <span>비밀번호 확인</span>
+          <input type="text" name="pwCheck"/>
+        </div>
+        <div class="Email">
+					<span>이메일</span>
+          <input type="text" name="email" />
+          <!-- <input type="button" value="인증번호 전송" name="" id="check_email" /> -->
+        </div>
+        <div class="InstagramId">
+          <span>인스타그램 아이디를 입력해주세요</span>
+          <input type="text" name="instaId"/>
+          <!-- <div class="check_open">
+            <label for="check1"> 공개 </label>
+            <input type="checkbox" id="check1" />
+            <label for="check2"> 비공개 </label>
+            <input type="checkbox" id="check1" />
+          </div> -->
+          <!-- <div>
+            <label for="instafeed"
+              >비공개인 경우 피드를 사진을 업로드해주세요</label
+            >
+            <input type="file" name="" id="instafeedupload" />
+          </div> -->
+        </div>
+        <button type="submit">회원가입</button>
+      </form>
+		</div>
     <footer>
-        <h3 id = "paragraph">문구문구문구문구문구문구문구</h3>
-        <h3 id = "copyright">@copyright by groobystar</h3>
+      <h3 id="paragraph">문구문구문구문구문구문구문구</h3>
+      <h3 id="copyright">@copyright by groobystar</h3>
     </footer>
-</body>
+  </body>
 </html>
