@@ -3,13 +3,21 @@ const nunjucks = require("nunjucks");
 const path = require("path");
 const dotenv = require("dotenv");
 const { sequelize } = require("./models");
-
+const cookieParser = require("cookie-parser");
+const expressSession = require("express-session");
 
 const externalRouter = require("./routes/external_test")
 const mainRouter = require("./routes");
 const authRouter = require("./routes/auth");
 
+const app = express();
 dotenv.config();
+
+app.set("view engine", "html");
+nunjucks.configure("views", {
+  express: app,
+  watch: true,
+});
 
 sequelize
     .sync({ force: false })
@@ -20,16 +28,24 @@ sequelize
     	console.error(err);
     });
 
-const app = express();
-app.set("view engine", "html");
-nunjucks.configure("views", {
-  express: app,
-  watch: true,
-});
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser(process.env.COOKIE_SECRET));
+app.use(
+  expressSession({
+    secret: process.env.COOKIE_SECRET,
+    resave: true,
+    saveUninitialized: true,
+    cookie: {
+      httpOnly: true,
+      Secure: true
+    },
+    name: 'session-cookie'
+  })
+);
+
 app.use('/', mainRouter)
 app.use('/test', externalRouter)
 app.use('/auth', authRouter)
