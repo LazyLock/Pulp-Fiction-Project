@@ -9,6 +9,7 @@ const expressSession = require("express-session");
 const externalRouter = require("./routes/external_test")
 const mainRouter = require("./routes");
 const authRouter = require("./routes/auth");
+const pageRouter = require("./routes/page");
 
 const app = express();
 dotenv.config();
@@ -46,9 +47,10 @@ app.use(
   })
 );
 
-app.use('/', mainRouter)
-app.use('/test', externalRouter)
-app.use('/auth', authRouter)
+app.use('/', mainRouter);
+app.use('/test', externalRouter);
+app.use('/auth', authRouter);
+app.use('/page', pageRouter);
 
 app.use((req, res, next) => {
   const error = new Error(`${req.method} ${req.url} 라우터가 없습니다.`);

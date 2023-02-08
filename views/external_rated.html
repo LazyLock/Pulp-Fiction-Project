@@ -1,36 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/external_rated.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/external_rated.css" />
     <title>외부 사람이 링크 타고온 페이지</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <img src="/mainlogo.png">
+      <img src="/mainlogo.png" />
     </header>
     <nav>
-        <main>
-            <div class="evaluation">
-                <h3>ooo님의 개인 페이지</h3>
-                <h3>총 30개의 평가가 있습니다</h3>
-                <button class="to_rating_page" ><a href="http://localhost:1708/test/rating">평가하기</a></button>
-                <button>???</button>
-            </div>
-            <ol class="eval_list">
+      <main>
+        <div class="evaluation">
+          <h3>{{result.rows[0].User.nick}}님의 개인 페이지</h3>
+          <h3>총 {{result.count}} 개의 평가가 있습니다</h3>
+          <button class="to_rating_page">
+            <a href="http://localhost:1708/test/rating">평가하기</a>
+          </button>
+          <button>???</button>
+        </div>
+        {% for comment in result.rows %}
+        <h3>{{comment.comment}}</h3>
+        <!-- <ol class="eval_list">
                 <li>{{comment}}</li>
                 <li>평가평가평가평가</li>
                 <li>평가평가평가</li>
                 <li>이거 자바스크립트 for문 돌려서 list마다 id 넣은 다음에 css 선택자로 조정해야할듯</li>
-            </ol>
-        </main>
+            </ol> -->
+        {% endfor %}
+      </main>
     </nav>
-    <footer style="text-align: center;">
-        문구문구문구
-    </footer>
-</body>
-
+    <footer style="text-align: center">문구문구문구</footer>
+  </body>
 </html>
